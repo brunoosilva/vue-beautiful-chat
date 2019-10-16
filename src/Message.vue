@@ -36,6 +36,7 @@
           <slot name="system-message-body" :message="message.data">
           </slot>
       </SystemMessage>
+      <AudioMessage v-else-if="message.type === 'audio'" :data="message.data" />
     </div>
   </div>
 </template>
