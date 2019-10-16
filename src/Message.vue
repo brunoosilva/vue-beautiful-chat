@@ -5,19 +5,19 @@
         received: message.author !== 'me' && message.type !== 'system',
         system: message.type === 'system'
       }">
-      <slot 
+      <slot
         name="user-avatar"
-        :message="message" 
+        :message="message"
         :user="user">
           <div v-if="message.type !== 'system'" :title="authorName" class="sc-message--avatar" :style="{
             backgroundImage: `url(${chatImageUrl})`
           }" v-tooltip="authorName"></div>
       </slot>
 
-      <TextMessage 
-        v-if="message.type === 'text'" 
-        :message="message" 
-        :messageColors="determineMessageColors()" 
+      <TextMessage
+        v-if="message.type === 'text'"
+        :message="message"
+        :messageColors="determineMessageColors()"
         :messageStyling="messageStyling"
         @remove="$emit('remove')">
           <template v-slot:default="scopedProps">
@@ -46,6 +46,7 @@ import FileMessage from './messages/FileMessage.vue'
 import EmojiMessage from './messages/EmojiMessage.vue'
 import TypingMessage from './messages/TypingMessage.vue'
 import SystemMessage from './messages/SystemMessage.vue'
+import AudioMessage from './messages/AudioMessage.vue'
 import chatIcon from './assets/chat-icon.svg'
 import store from "./store/";
 
@@ -60,7 +61,8 @@ export default {
     FileMessage,
     EmojiMessage,
     TypingMessage,
-    SystemMessage
+    SystemMessage,
+    AudioMessage
   },
   props: {
     message: {
