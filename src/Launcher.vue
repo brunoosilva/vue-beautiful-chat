@@ -85,11 +85,9 @@ export default {
     },
     open: {
       type: Function,
-      required: true
     },
     close: {
       type: Function,
-      required: true
     },
     showFile: {
       type: Boolean,
@@ -109,7 +107,6 @@ export default {
     },
     onMessageWasSent: {
       type: Function,
-      required: true
     },
     messageList: {
       type: Array,
@@ -130,22 +127,22 @@ export default {
     colors: {
       type: Object,
       required: false,
-      validator: c => 
+      validator: c =>
         'header' in c
-        && 'bg' in c.header 
+        && 'bg' in c.header
         && 'text' in c.header
         && 'launcher' in c
         && 'bg' in c.launcher
         && 'messageList' in c
         && 'bg' in c.messageList
         && 'sentMessage' in c
-        && 'bg' in c.sentMessage 
+        && 'bg' in c.sentMessage
         && 'text' in c.sentMessage
         && 'receivedMessage' in c
-        && 'bg' in c.receivedMessage 
+        && 'bg' in c.receivedMessage
         && 'text' in c.receivedMessage
         && 'userInput' in c
-        && 'bg' in c.userInput 
+        && 'bg' in c.userInput
         && 'text' in c.userInput,
       default: function () {
         return {
@@ -233,7 +230,7 @@ export default {
   position: relative;
   display: block;
   width: 60px;
-  height: 60px;  
+  height: 60px;
   border-radius: 50%;
   transition: box-shadow 0.2s ease-in-out;
 }

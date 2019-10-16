@@ -36,7 +36,6 @@ export default {
     },
     onClose: {
       type: Function,
-      required: true
     },
     colors: {
       type: Object,

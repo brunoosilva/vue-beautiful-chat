@@ -101,7 +101,6 @@ export default {
     },
     onSubmit: {
       type: Function,
-      required: true
     },
     placeholder: {
       type: String,
@@ -169,7 +168,7 @@ export default {
       }
     },
     _submitTextWhenFile(event, text, file) {
-      if (text && text.length > 0) {  
+      if (text && text.length > 0) {
         this.onSubmit({
           author: 'me',
           type: 'file',

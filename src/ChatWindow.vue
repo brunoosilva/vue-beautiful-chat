@@ -94,11 +94,9 @@ export default {
     },
     onUserInputSubmit: {
       type: Function,
-      required: true
     },
     onClose: {
       type: Function,
-      required: true
     },
     messageList: {
       type: Array,
