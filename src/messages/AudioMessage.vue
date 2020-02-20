@@ -1,7 +1,10 @@
 <template>
-  <audio controls="controls">
-    <source :src="data.text" type="audio/mpeg">
-  </audio>
+  <div class="sc-message--text" :style="messageColors">
+    <audio controls="controls">
+      <source :src="data.text" type="audio/mpeg">
+    </audio>
+    <p v-if="data.meta" class='sc-message--meta' :style="{color: messageColors.color}">{{data.meta}}</p>
+  </div>
 </template>
 
 <script>
@@ -10,7 +13,17 @@
       data: {
         type: Object,
         required: true
-      }
+      },
+      messageColors: {
+        type: Object,
+        required: true
+      },
     }
   }
 </script>
+
+<style>
+  .sc-message--text{
+    padding: 5px;
+  }
+</style>
