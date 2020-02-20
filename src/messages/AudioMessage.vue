@@ -1,5 +1,5 @@
 <template>
-  <div class="sc-message--text" :style="messageColors">
+  <div class="sc-message--text sc-message--audio" :style="messageColors">
     <audio controls="controls">
       <source :src="data.text" type="audio/mpeg">
     </audio>
@@ -22,8 +22,8 @@
   }
 </script>
 
-<style>
-  .sc-message--text{
-    padding: 5px;
+<style scoped>
+  .sc-message--audio{
+    padding: 5px!important;
   }
 </style>
