@@ -37,6 +37,7 @@
           </slot>
       </SystemMessage>
       <AudioMessage v-else-if="message.type === 'audio'" :data="message.data" :messageColors="determineMessageColors()" />
+      <ImageMessage v-else-if="message.type === 'image'" :data="message.data" :messageColors="determineMessageColors()" />
     </div>
   </div>
 </template>
@@ -48,6 +49,7 @@ import EmojiMessage from './messages/EmojiMessage.vue'
 import TypingMessage from './messages/TypingMessage.vue'
 import SystemMessage from './messages/SystemMessage.vue'
 import AudioMessage from './messages/AudioMessage.vue'
+import ImageMessage from './messages/ImageMessage.vue'
 import chatIcon from './assets/chat-icon.svg'
 import store from "./store/";
 
@@ -63,7 +65,8 @@ export default {
     EmojiMessage,
     TypingMessage,
     SystemMessage,
-    AudioMessage
+    AudioMessage,
+    ImageMessage
   },
   props: {
     message: {
